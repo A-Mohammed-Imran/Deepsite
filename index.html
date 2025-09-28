@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio | 2nd Year Undergraduate</title>
+    <meta name="description"
+        content="Portfolio of a passionate 2nd-year undergraduate student showcasing projects, skills, and achievements">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: "#3B82F6",
+                            DEFAULT: "#2563EB",
+                            dark: "#1D4ED8"
+                        },
+                        secondary: {
+                            light: "#10B981",
+                            DEFAULT: "#059669",
+                            dark: "#047857"
+                        },
+                        dark: {
+                            bg: "#111827",
+                            card: "#1F2937",
+                            text: "#F9FAFB"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    transitionProperty: {
+                        'colors': 'color, background-color, border-color, fill, stroke'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .smooth-transition {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(8rem);
+        }
+
+        .section {
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        /* Style for mobile menu icon to transition between bars and times */
+        .mobile-menu-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800 dark:bg-dark-bg dark:text-dark-text smooth-transition">
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-primary-dark dark:text-primary-light">Portfolio</a>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about"
+                        class="hover:text-primary-dark dark:hover:text-primary-light smooth-transition nav-link">About</a>
+                    <a href="#education"
+                        class="hover:text-primary-dark dark:hover:text-primary-light smooth-transition nav-link">Education</a>
+                    <a href="#skills"
+                        class="hover:text-primary-dark dark:hover:text-primary-light smooth-transition nav-link">Skills</a>
+                    <a href="#projects"
+                        class="hover:text-primary-dark dark:hover:text-primary-light smooth-transition nav-link">Projects</a>
+                    <a href="#achievements"
+                        class="hover:text-primary-dark dark:hover:text-primary-light smooth-transition nav-link">Achievements</a>
+                    <a href="#contact"
+                        class="hover:text-primary-dark dark:hover:text-primary-light smooth-transition nav-link">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 smooth-transition"
+                        aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md bg-gray-200 dark:bg-gray-700"
+                        aria-label="Toggle Mobile Menu">
+                        <i class="fas fa-bars mobile-menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 py-2 border-t dark:border-gray-600">
+                <div class="flex flex-col space-y-3">
+                    <a href="#about"
+                        class="py-2 hover:text-primary-dark dark:hover:text-primary-light smooth-transition mobile-nav-link">About</a>
+                    <a href="#education"
+                        class="py-2 hover:text-primary-dark dark:hover:text-primary-light smooth-transition mobile-nav-link">Education</a>
+                    <a href="#skills"
+                        class="py-2 hover:text-primary-dark dark:hover:text-primary-light smooth-transition mobile-nav-link">Skills</a>
+                    <a href="#projects"
+                        class="py-2 hover:text-primary-dark dark:hover:text-primary-light smooth-transition mobile-nav-link">Projects</a>
+                    <a href="#achievements"
+                        class="py-2 hover:text-primary-dark dark:hover:text-primary-light smooth-transition mobile-nav-link">Achievements</a>
+                    <a href="#contact"
+                        class="py-2 hover:text-primary-dark dark:hover:text-primary-light smooth-transition mobile-nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="py-16 md:py-24 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-dark-bg">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span
+                                class="text-primary-dark dark:text-primary-light">Mohammed imran</span></h1>
+                        <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">Passionate Computer Science Student</p>
+                        <p class="text-gray-500 dark:text-gray-400 mb-8">Eager to learn, create, and grow in the world
+                            of technology. Currently exploring web development, AI, and software engineering.</p>
+                        <div class="flex space-x-4">
+                            <a href="#projects"
+                                class="px-6 py-3 bg-primary-dark dark:bg-primary-light text-white rounded-lg hover:bg-primary-dark/90 dark:hover:bg-primary-light/90 smooth-transition nav-link">View
+                                Projects</a>
+                            <a href="#contact"
+                                class="px-6 py-3 border border-primary-dark dark:border-primary-light text-primary-dark dark:text-primary-light rounded-lg hover:bg-primary-dark/10 smooth-transition nav-link">Contact
+                                Me</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="relative">
+                            <div
+                                class="w-64 h-64 md:w-80 md:h-80 bg-primary-dark/10 dark:bg-primary-light/10 rounded-full overflow-hidden border-4 border-white dark:border-dark-card shadow-xl">
+                                <img src="Pro.jpeg" alt="Profile photo of Mohammed Imran"
+                                    class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div
+                                class="absolute -bottom-2 -right-2 bg-primary-dark dark:bg-primary-light text-white py-1 px-3 rounded-full text-sm">
+                                <i class="fas fa-star mr-1"></i> Available for internships
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 bg-white dark:bg-dark-card section section-hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+                <div class="max-w-3xl mx-auto">
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                        I'm a Computer Science student with a passion for creating innovative solutions through code. My
+                        journey in technology began in high school, and since then I've been constantly expanding my
+                        knowledge and skills.
+                    </p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                        When I'm not coding, you can find me participating in hackathons, contributing to open-source
+                        projects, or exploring new technologies. I believe in continuous learning and pushing boundaries
+                        to create meaningful impact.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-primary-dark dark:text-primary-light">5+</div>
+                            <div class="text-gray-600 dark:text-gray-400">Projects</div>
+                        </div>
+                        <!-- <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-primary-dark dark:text-primary-light">2</div>
+                            <div class="text-gray-600 dark:text-gray-400">Hackathons</div>
+                        </div> -->
+                        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-primary-dark dark:text-primary-light">3</div>
+                            <div class="text-gray-600 dark:text-gray-400">Technologies</div>
+                        </div>
+                        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-primary-dark dark:text-primary-light">100%</div>
+                            <div class="text-gray-600 dark:text-gray-400">Passionate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-16 bg-gray-50 dark:bg-dark-bg section section-hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Education</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="relative">
+                        <div
+                            class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-primary-dark/20 dark:bg-primary-light/20">
+                        </div>
+
+                        <div class="mb-8 flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                                <h3 class="text-xl font-semibold">Bachelor of Science in Computer Science</h3>
+                                <p class="text-primary-dark dark:text-primary-light">thiruvalluvar university </p>
+                                <p class="text-gray-500 dark:text-gray-400">2024 - Present</p>
+                            </div>
+                            <div class="flex justify-center md:justify-start md:w-1/2 md:pl-8">
+                                <div class="w-4 h-4 rounded-full bg-primary-dark dark:bg-primary-light"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8 flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0 order-2 md:order-1">
+                                <div class="md:hidden">
+                                    <h3 class="text-xl font-semibold">High School </h3>
+                                    <p class="text-primary-dark dark:text-primary-light">Islamiah Highre Secondary
+                                        School</p>
+                                    <p class="text-gray-500 dark:text-gray-400">2012 - 2024</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center md:justify-start md:w-1/2 md:pl-8 order-1 md:order-2">
+                                <div class="w-4 h-4 rounded-full bg-primary-dark dark:bg-primary-light"></div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-8 order-3 hidden md:block">
+                                <h3 class="text-xl font-semibold">High School </h3>
+                                <p class="text-primary-dark dark:text-primary-light">Islamiah Highre Secondary School
+                                </p>
+                                <p class="text-gray-500 dark:text-gray-400">2012 - 2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 bg-white dark:bg-dark-card p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Relevant Coursework</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary-dark dark:text-secondary-light mr-2"></i>
+                                <span>Data Structures and Algorithms</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary-dark dark:text-secondary-light mr-2"></i>
+                                <span>Web Development</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary-dark dark:text-secondary-light mr-2"></i>
+                                <span>Database Systems</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary-dark dark:text-secondary-light mr-2"></i>
+                                <span>Object-Oriented Programming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16 bg-white dark:bg-dark-card section section-hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fas fa-code mr-2 text-primary-dark dark:text-primary-light"></i>
+                            Technical Skills
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>HTML/CSS</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-primary-dark dark:bg-primary-light h-2.5 rounded-full"
+                                        style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>JavaScript</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-primary-dark dark:bg-primary-light h-2.5 rounded-full"
+                                        style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Python</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-primary-dark dark:bg-primary-light h-2.5 rounded-full"
+                                        style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Java</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-primary-dark dark:bg-primary-light h-2.5 rounded-full"
+                                        style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fas fa-tools mr-2 text-primary-dark dark:text-primary-light"></i>
+                            Tools & Technologies
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-3 py-1 rounded-full text-sm">Git</span>
+                            <span
+                                class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-3 py-1 rounded-full text-sm">VS
+                                Code</span>
+                            <span
+                                class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-3 py-1 rounded-full text-sm">Figma</span>
+                            <span
+                                class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-3 py-1 rounded-full text-sm">React</span>
+                            <span
+                                class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span
+                                class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-3 py-1 rounded-full text-sm">MongoDB</span>
+                            <span
+                                class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-3 py-1 rounded-full text-sm">Tailwind
+                                CSS</span>
+                            <span
+                                class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-3 py-1 rounded-full text-sm">MySQL</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fas fa-users mr-2 text-primary-dark dark:text-primary-light"></i>
+                            Soft Skills
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary-dark dark:text-secondary-light mr-2"></i>
+                                <span>Problem Solving</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary-dark dark:text-secondary-light mr-2"></i>
+                                <span>Team Collaboration</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary-dark dark:text-secondary-light mr-2"></i>
+                                <span>Communication</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary-dark dark:text-secondary-light mr-2"></i>
+                                <span>Time Management</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-secondary-dark dark:text-secondary-light mr-2"></i>
+                                <span>Adaptability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 bg-gray-50 dark:bg-dark-bg section section-hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white dark:bg-dark-card rounded-lg overflow-hidden shadow-md hover:shadow-lg smooth-transition">
+                        <div class="h-48 overflow-hidden">
+                            <img src="Cartoon network.png" alt="website project" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Clone of Cartoon Network Website</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">A full-stack website with
+                                product filtering, cart functionality, and user authentication.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded text-xs">HTML</span>
+                                <span
+                                    class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded text-xs">CSS</span>
+
+                            </div>
+                            <div class="flex justify-between">
+                                <a href="https://cartoon-123.netlify.app/"
+                                    class="text-primary-dark dark:text-primary-light hover:underline flex items-center"
+                                    aria-label="Live Demo of E-Commerce Website">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-dark-card rounded-lg overflow-hidden shadow-md hover:shadow-lg smooth-transition">
+                        <div class="h-48 overflow-hidden">
+                            <img src="Amazon.png" alt="Amazon clone project"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Amazon Clone website</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">A productivity application for shopping
+                                daily tasks with drag-and-drop functionality and deadline reminders.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded text-xs">HTML</span>
+                                <span
+                                    class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded text-xs">CSS</span>
+                                <!-- <span
+                                    class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded text-xs">LocalStorage</span> -->
+                            </div>
+                            <div class="flex justify-between">
+                                <a href="https://amiamazon-clone.netlify.app/"
+                                    class="text-primary-dark dark:text-primary-light hover:underline flex items-center"
+                                    aria-label="Live Demo of Task Management App">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                                </a>
+                                <!-- <a href="#"
+                                    class="text-gray-500 dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary-light"
+                                    aria-label="GitHub Repository for Task Management App">
+                                    <i class="fab fa-github"></i> -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-dark-card rounded-lg overflow-hidden shadow-md hover:shadow-lg smooth-transition">
+                        <div class="h-48 overflow-hidden">
+                            <img src="Bootstrap.png" alt="Weather application project"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Bootstrap Creative Website</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">A responsive and creative website for modle webpage displays</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded text-xs">HTML/CSS</span>
+                                <span
+                                    class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span
+                                    class="bg-primary-dark/10 dark:bg-primary-light/10 text-primary-dark dark:text-primary-light px-2 py-1 rounded text-xs">Bootstrap</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <a href="https://bootstrapicoders.netlify.app/"
+                                    class="text-primary-dark dark:text-primary-light hover:underline flex items-center"
+                                    aria-label="Live Demo of Weather Application">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                                </a>
+                                <!-- <a href="#"
+                                    class="text-gray-500 dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary-light"
+                                    aria-label="GitHub Repository for Weather Application">
+                                    <i class="fab fa-github"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#"
+                        class="inline-flex items-center text-primary-dark dark:text-primary-light hover:underline">
+                        View All Projects
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="py-16 bg-white dark:bg-dark-card section section-hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Achievements</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fas fa-certificate mr-2 text-primary-dark dark:text-primary-light"></i>
+                            Certifications
+                        </h3>
+                        <div class="space-y-4">
+                            <!-- <div>
+                                <h4 class="font-medium">Web-Wizard Champion</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Intra College webdesign compitation
+                                </p>
+                            </div> -->
+                            <div>
+                                <h4 class="font-medium">Cridly Certification</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Earned the IBM Web Development Fundamentals certification in 2025.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Python Programming Fundamental's </h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">University of Coursera, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fas fa-trophy mr-2 text-primary-dark dark:text-primary-light"></i>
+                            Awards
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium">Web-Wizard Champion</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Intra College webdesign compitation
+                                </p>
+                            </div>
+                            <!-- <div>
+                                <h4 class="font-medium">Dean's List, Fall 2022 & Spring 2023</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Academic excellence recognition</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Best Freshman Project 2022</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Computer Science Department award
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 bg-gray-50 dark:bg-dark-bg section section-hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-primary-dark dark:bg-primary-light text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">mohammedimranat@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary-dark dark:bg-primary-light text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Phone</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">+91 7418927831</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary-dark dark:bg-primary-light text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Location</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">Vellor, TN</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold mb-4">Connect With Me</h3>
+                            <div class="flex space-x-4">
+                                <a href="#"
+                                    class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 p-3 rounded-full hover:bg-primary-dark dark:hover:bg-primary-light hover:text-white smooth-transition"
+                                    aria-label="LinkedIn Profile">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#"
+                                    class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 p-3 rounded-full hover:bg-primary-dark dark:hover:bg-primary-light hover:text-white smooth-transition"
+                                    aria-label="GitHub Profile">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#"
+                                    class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 p-3 rounded-full hover:bg-primary-dark dark:hover:bg-primary-light hover:text-white smooth-transition"
+                                    aria-label="Twitter Profile">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#"
+                                    class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 p-3 rounded-full hover:bg-primary-dark dark:hover:bg-primary-light hover:text-white smooth-transition"
+                                    aria-label="Instagram Profile">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <form class="bg-white dark:bg-dark-card p-6 rounded-lg shadow-md">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-dark dark:focus:ring-primary-light focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                    placeholder="Your name">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-dark dark:focus:ring-primary-light focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                    placeholder="Your email">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                                <textarea id="message" rows="5"
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-dark dark:focus:ring-primary-light focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                    placeholder="Your message"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-primary-dark dark:bg-primary-light text-white py-3 px-4 rounded-md hover:bg-primary-dark/90 dark:hover:bg-primary-light/90 smooth-transition">Send
+                                Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2023 Mohammed imran. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-primary-light smooth-transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-light smooth-transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+
+        // Check for saved theme preference or respect OS preference
+        function loadTheme() {
+            if (localStorage.getItem('color-theme') === 'dark' ||
+                (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', function () {
+            // Toggle theme
+            document.documentElement.classList.toggle('dark');
+
+            // Update icon and localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('color-theme', 'light');
+            }
+        });
+
+        loadTheme(); // Load theme on initial page load
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuBtn.querySelector('i');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+
+            // Change icon based on menu state
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            } else {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Smooth Scrolling for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for Scroll Animation
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('section-hidden');
+                    // Stop observing once it's visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Options
+            root: null, // viewport
+            threshold: 0.15, // trigger when 15% of the section is visible
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+    </script>
+</body>
+
+</html>
